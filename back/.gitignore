@@ -1,0 +1,54 @@
+# Node.js dependencies
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build files
+/build
+/dist
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+
+# Coverage files
+/coverage
+
+# Temporary files
+*.tmp
+*.temp
+
+# Debug files
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# System files
+*.DS_Store
+Thumbs.db
+
+# Optional: lock files (uncomment if you don't want lock files)
+# package-lock.json
+# yarn.lock
+
+# Miscellaneous
+*.bak
+*.backup
