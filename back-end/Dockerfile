@@ -1,20 +1,12 @@
-# Use an official Node.js image
-FROM node:18
+FROM node:18 AS build
 
-# Set the working directory
-WORKDIR /app
+RUN mkdir -p /home/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+COPY ./app /home/app
 
-# Install dependencies
+WORKDIR /home/app
+
 RUN npm install
 
-# Copy the rest of the application
-COPY . .
+CMD ["node", "index.js"]
 
-# Expose the port your app runs on
-EXPOSE 5000
-
-# Start the application
-CMD ["nodemon", "index.js"]

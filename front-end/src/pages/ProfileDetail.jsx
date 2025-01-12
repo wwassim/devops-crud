@@ -7,7 +7,7 @@ const ProfileDetail = () => {
   const [data, setData] = useState([])
 
     useEffect(()=>{
-        axios.get(`http://localhost:3000/users/${params.id}`)
+        axios.get(`http://localhost:5000/users/${params.id}`)
         .then((res)=>res.data)
         .then((result)=>setData(result))
         .catch(err=>console.log("error->",err))

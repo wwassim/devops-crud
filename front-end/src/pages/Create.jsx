@@ -11,7 +11,7 @@ const Create = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post(`http://localhost:3000/users`,data)
+    axios.post(`http://localhost:5000/users`,data)
     .then((res)=>{console.log(res);navigate('/')})
     .catch(err=>console.log("error->",err))
   }

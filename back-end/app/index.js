@@ -37,6 +37,7 @@ app.get("/users/:id", async (req, res) => {
 });
 // CREATE USER
 app.post("/users", async (req, res) => {
+  console.log("test->>>>>>>>>>>>>>>>>>>wahed");
   try {
     const { email, name, lastName } = req.body;
     const findUserEmail = await Users.findOne({ email: email });
@@ -58,18 +59,18 @@ app.put("/users/:id", async (req, res) => {
       !req.body.email ||
       !req.body.name ||
       !req.body.lastName ||
-      !req?.params?.id
+      !req.params.id
     ) {
       return res.status(400).json("check your data please !!!");
     }
-    const findUser = await Users.findById(req?.params?.id);
+    const findUser = await Users.findById(req.params.id);
 
     if (!findUser) {
       return res.status(400).json("no data fond it !!!");
     }
 
     const updateUser = await Users.findByIdAndUpdate(
-      { _id: req?.params?.id },
+      { _id: req.params.id },
       {
         email: req.body.email,
         name: req.body.name,
@@ -86,7 +87,7 @@ app.put("/users/:id", async (req, res) => {
 // DELETE USER
 app.delete("/users/:id", async (req, res) => {
   try {
-    const deleteUser = await Users.findByIdAndDelete(req?.params?.id);
+    const deleteUser = await Users.findByIdAndDelete(req.params.id);
     if (!deleteUser) {
       return res.status(400).json("no data fond it !!!");
     }
@@ -98,7 +99,7 @@ app.delete("/users/:id", async (req, res) => {
 
 mongoose
   .connect(
-    `mongodb+srv://falfoulsabrine1:0000@formation.eihfp.mongodb.net/crud?retryWrites=true&w=majority&appName=Formation`,
+    `mongodb+srv://wassim:0000@nodeexpress.mr7l440.mongodb.net/cruddevops?retryWrites=true&w=majority&appName=nodeexpress`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log(" Mongoose is connected"))
